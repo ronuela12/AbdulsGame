@@ -1,0 +1,58 @@
+body{
+    /*border: red solid 2px;*/
+    width: 70%;
+    margin: 0 auto;
+    background: rgb(168, 168, 168);
+    
+}
+.container {
+    padding: 10px;
+    text-align: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: auto 0;
+}
+.top{
+    border: solid black 2px;
+}
+.title {
+    text-align: center;
+    font-family: fantasy;
+}
+.explain {
+    text-align: center;
+    font-family: cursive;
+    font-weight: bold;
+    font-size: 20px;
+}
+.images{
+    border: black 2px solid;
+    padding: 10px;
+    background-color: white;
+    margin: 0 auto;
+    display: flex;
+    flex: wrap;
+    justify-content: space-around;
+    
+    
+    
+    
+}
+.images img:hover{
+    filter: drop-shadow(0px 0px 5px rgb(31, 115, 224)); 
+}
+button {
+    border-radius: 24px;
+    border: black solid 2px;
+    font-weight: bold;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    margin-bottom: 10px;
+
+}
+button:hover {
+    background-color: red; 
+    color: white;
+
+}
