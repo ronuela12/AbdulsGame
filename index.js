@@ -16,6 +16,8 @@ function rpsGame(yourChoice) {
 }
 
 function randToRpsInt() {
+    //Math.random() * 3 chooses random numbers less than 3 (0, 1, 2, 1.3, 2.4, 0.5)
+    //Math.floor() makes decimals into whole numbers
     return Math.floor(Math.random() * 3);
 }
 
@@ -26,8 +28,8 @@ function numberToChoice(number) {
 function decideWinner(yourChoice, computerChoice) {
     let rpsDatabase = {
         'rock': {'scissors': 1, 'rock': 0.5, 'paper': 0},
-        'paper': {'rock': 1, 'paper': 0.5, 'scissors': 0},
-        'scissor': {'paper': 1, 'scissor': 0.5, 'rock': 0},
+        'paper': {'rock': 1, 'paper': 0.5, 'scissor': 0},
+        'scissor': {'paper': 1, 'scissor': 0.5, 'rock': 0}
         
     }
 
@@ -52,7 +54,7 @@ function rpsFrontEnd(humanImageChoice, botImageChoice, finalMessage) {
  let imageDatabase = {
      'rock': document.getElementById('rock').src,
      'paper': document.getElementById('paper').src,
-     'scissor': document.getElementById('scissor').src
+     'scissor': document.getElementById('scissor').src,
  }   
 
     //removes the images
@@ -65,13 +67,21 @@ function rpsFrontEnd(humanImageChoice, botImageChoice, finalMessage) {
     let messageDiv = document.createElement('div');
 
     
-    
+    humanDiv.innerHTML = "<img src='" + imageDatabase[humanImageChoice] + "' height=150 width=150 style='filter: drop-shadow(0px 0px 5px rgb(31, 115, 224));'>"
     botDiv.innerHTML = "<img src='" + imageDatabase[botImageChoice] + "' height=150 width=150 style='filter: drop-shadow(0px 0px 5px red);'>"
     messageDiv.innerHTML = "<h1 style ='color: " + finalMessage['color'] + "; font-size: 60px; padding: 30px; '>" + finalMessage['message'] + "</h1>"
-    humanDiv.innerHTML = "<img src='" + imageDatabase[humanImageChoice] + "' height=150 width=150 style='filter: drop-shadow(0px 0px 5px rgb(31, 115, 224));'>"
 
     document.getElementById('images-div').appendChild(humanDiv);
     document.getElementById('images-div').appendChild(messageDiv);
     document.getElementById('images-div').appendChild(botDiv);
     
+}
+
+let x = document.getElementById("myAudio");
+function playAudio() {
+    x.play();
+}
+
+function pauseAudio() {
+    x.pause();
 }
